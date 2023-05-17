@@ -10,13 +10,6 @@
     display: flex;
 }
 
-.layout1{
-    z-index: 5;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 .layout0-left{
     width: 45%;
     height: 100vh;
@@ -33,9 +26,6 @@
     width: 55%;
 }
 
-.logo{
-    color: white;
-}
 
 #BeCode{
     scale: 0.75;
@@ -65,6 +55,18 @@ p{
     width: 50%;
     margin-left: 5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo{
+    width: 30px;
+}
+
+.logo-line{
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    margin-left: 2%;
 }
 
 /*--------------------------------------------   PART MENU BURGER   --------------------------------------------------------------------*/
@@ -166,6 +168,10 @@ p{
     
       transition: all 0.8s ease;
   }
+
+  .overflow{
+    overflow: hidden;
+  }
   
   /* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
   
@@ -179,10 +185,8 @@ p{
   .menu >  div > ul{
       display: flex;
       flex-direction: column;
-      position: fixed;
-      top: 70px;
-      padding-left: 10px;
-    
+      /* position: fixed; */
+      top: 70px;    
     /* HIDDEN INITIALLY  :  */
     
       visibility: hidden;
@@ -191,13 +195,13 @@ p{
   .menu > div > ul > li{
       list-style: none;
       padding: 0.5rem;
+      padding-left: 10px;
   }
   
   .menu > div > ul > li > a{
       color: black;
       text-decoration: none;
       font-size: 2rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   /* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */

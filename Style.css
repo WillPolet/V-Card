@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.layout0{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+}
+
+.layout1{
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.layout0-left{
+    width: 45%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,19,135,1) 0%, rgba(0,90,255,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.layout0-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+
+.logo{
+    color: white;
+}
+
+#BeCode{
+    scale: 0.75;
+    top: -20px;
+    left: -20px;
+    position: absolute;
+}
+
+.info{
+    margin: 7%;
+    color: white;
+}
+
+p{
+    margin: 2%;
+}
+
+#img{
+    width: 25%;
+    position: absolute;
+    top: 10%;
+    left: 32%;
+    box-shadow: 5px 5px 10px darkslategrey;
+}
+
+#content-right{
+    width: 50%;
+    margin-left: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*--------------------------------------------   PART MENU BURGER   --------------------------------------------------------------------*/
+#MenuBurger{
+    z-index: 100;
+    position: relative;
+}
+
+
+.toggler{
+    /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
+      z-index:20;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      opacity: 0;
+  }
+  
+  .hamburger{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 40px;
+      width: 40px;
+      padding: 0.6rem;
+      z-index: 19;
+    
+    /* FOR DISPLAYING EVERY ELEMENT IN THE CENTER : */
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* CREATING THE MIDDLE LINE OF THE HAMBURGER : */
+  
+  .hamburger > div{
+      position: relative;
+      top: 0;
+      left: 0;
+      background: darkblue;
+      height: 2px;
+      width: 60%;
+      transition: all  0.4s ease;
+  }
+  
+  /* CREATING THE TOP AND BOTTOM LINES : 
+  TOP AT -10PX ABOVE THE MIDDLE ONE AND BOTTOM ONE IS 10PX BELOW THE MIDDLE: */
+  
+  .hamburger > div::before,
+  .hamburger > div::after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      background: darkblue;
+      width: 100%;
+      height: 2px;
+      transition: all  0.4s ease;
+  }
+  
+  .hamburger > div::after{
+      top: 10px;
+  }
+  
+  /* IF THE TOGGLER IS IN ITS CHECKED STATE, THEN SETTING THE BACKGROUND OF THE MIDDLE LAYER TO COMPLETE BLACK AND OPAQUE :  */
+  
+  .toggler:checked + .hamburger > div{
+      background: rgba(0,0,0,0);
+  }
+  
+  .toggler:checked + .hamburger > div::before{
+      top: 0;
+      transform: rotate(-45deg);
+      background: darkblue;
+  }
+  
+  /* AND ROTATING THE TOP AND BOTTOM LINES :  */
+  
+  .toggler:checked + .hamburger > div::after{
+      top: 0;
+      transform: rotate(-135deg);
+      background: darkblue;
+  }
+  
+  
+  /* MAIN MENU WITH THE WHITE BACKGROUND AND THE TEXT :  */
+  
+  .menu{
+      background: linear-gradient(90deg, rgba(77, 77, 242, 0.629) 0%, rgba(0,90,255,1) 50%, rgb(68, 74, 193) 95%, rgba(2,0,36,1) 100%);
+      width: 0%;
+      height: 100vh;
+      position: absolute;
+      right: 0;
+    
+    /* APPLYING TRANSITION TO THE MENU :  */
+    
+      transition: all 0.8s ease;
+  }
+  
+  /* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
+  
+  .toggler:checked ~ .menu{
+      width: 14%;
+  }
+  
+  
+  /* STYLING THE LIST :  */
+  
+  .menu >  div > ul{
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      padding-left: 10px;
+    
+    /* HIDDEN INITIALLY  :  */
+    
+      visibility: hidden;
+  }
+  
+  .menu > div > ul > li{
+      list-style: none;
+      padding: 0.5rem;
+  }
+  
+  .menu > div > ul > li > a{
+      color: black;
+      text-decoration: none;
+      font-size: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
+  
+  .toggler:checked ~ .menu > div > ul{
+      transition: visibility 0.4s ease;
+      transition-delay: 0.1s;
+      visibility: visible;
+  }
+
+/* WHEN THE TOGGLE IS UNCHECKED, CONTENT OF THE MENU STAY IN MENU FOR THE TRANSITION TIME */
+
+  .toggler ~ .menu > div > ul{
+      transition: visibility 0.4s ease;
+      transition-delay: 0.1s;
+      visibility: hidden;
+  }
+  
+  .toggler:checked ~ .menu > div > ul > li > a:hover{
+      color: white;
+  }

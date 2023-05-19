@@ -28,9 +28,9 @@
 
 
 #BeCode{
-    scale: 0.75;
-    top: -20px;
-    left: -20px;
+    width: 15%;
+    top: 2%;
+    left: 2%;
     position: absolute;
 }
 
